@@ -1,0 +1,55 @@
+@prefix : <http://www.example.org/BrowserFingerprinting#> .
+@prefix bf: <http://www.example.org/BrowserFingerprinting#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<http://www.example.org/BrowserFingerprinting> a owl:Ontology ;
+    rdfs:label "Browser Fingerprinting Ontology"@en ;
+    rdfs:comment "An ontology describing entities and relationships related to browser fingerprinting, including scripts, websites, and fingerprintable attributes."@en ;
+    dcterms:title "Browser Fingerprinting Ontology" ;
+    dcterms:creator [ 
+        a foaf:Person ;
+        foaf:name Dr Christopher D. McDermott ;
+        foaf:mbox <mailto:c.d.mcdermott@rgu.ac.uk>
+    ] ;
+    dcterms:publisher <http://www.example.org/> ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:created "2024-05-07"^^xsd:date ;
+    owl:versionInfo "1.0" ;
+    vann:preferredNamespacePrefix "bf" ;
+    vann:preferredNamespaceUri "http://www.example.org/BrowserFingerprinting#" ;
+    dcterms:description "This ontology provides a structured vocabulary to describe and analyze browser fingerprinting techniques and their components."@en .
+
+### Classes
+bf:Website rdf:type owl:Class .
+bf:FingerprintingScript rdf:type owl:Class .
+bf:Attribute rdf:type owl:Class .
+bf:Feature rdf:type owl:Class .
+bf:TrackingMechanism rdf:type owl:Class .
+bf:FingerprintingCategory rdf:type owl:Class .
+bf:BalancedAttribute rdfs:subClassOf bf:Attribute .
+bf:ImbalancedAttribute rdfs:subClassOf bf:Attribute .
+bf:SensitiveFeature rdfs:subClassOf bf:Feature .
+bf:AggressiveFeature rdfs:subClassOf bf:Feature .
+
+### Object Properties
+bf:usesScript rdf:type owl:ObjectProperty ; rdfs:domain bf:Website ; rdfs:range bf:FingerprintingScript .
+bf:requestsAttribute rdf:type owl:ObjectProperty ; rdfs:domain bf:FingerprintingScript ; rdfs:range bf:Attribute .
+bf:belongsToFeature rdf:type owl:ObjectProperty ; rdfs:domain bf:Attribute ; rdfs:range bf:Feature .
+bf:hasTrackingMechanism rdf:type owl:ObjectProperty ; rdfs:domain bf:FingerprintingScript ; rdfs:range bf:TrackingMechanism .
+bf:classifiedAs rdf:type owl:ObjectProperty ; rdfs:domain bf:FingerprintingScript ; rdfs:range bf:FingerprintingCategory .
+bf:containsAggressiveAttribute rdf:type owl:ObjectProperty ; rdfs:domain bf:Feature ; rdfs:range bf:AggressiveFeature .
+bf:containsSensitiveAttribute rdf:type owl:ObjectProperty ; rdfs:domain bf:Feature ; rdfs:range bf:SensitiveFeature .
+
+### Data Properties
+bf:scriptName rdf:type owl:DatatypeProperty ; rdfs:domain bf:FingerprintingScript ; rdfs:range xsd:string .
+bf:websiteURL rdf:type owl:DatatypeProperty ; rdfs:domain bf:Website ; rdfs:range xsd:string .
+bf:attributeName rdf:type owl:DatatypeProperty ; rdfs:domain bf:Attribute ; rdfs:range xsd:string .
+bf:featureName rdf:type owl:DatatypeProperty ; rdfs:domain bf:Feature ; rdfs:range xsd:string .
+bf:occurrencePercentage rdf:type owl:DatatypeProperty ; rdfs:domain bf:Attribute ; rdfs:range xsd:decimal .
+bf:isSensitive rdf:type owl:DatatypeProperty ; rdfs:domain bf:Feature ; rdfs:range xsd:boolean .
+bf:isAggressive rdf:type owl:DatatypeProperty ; rdfs:domain bf:Feature ; rdfs:range xsd:boolean .
