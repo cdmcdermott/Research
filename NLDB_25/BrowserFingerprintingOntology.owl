@@ -1,5 +1,5 @@
-@prefix : <http://www.example.org/BrowserFingerprinting#> .
-@prefix bf: <http://www.example.org/BrowserFingerprinting#> .
+@prefix : <https://cdmcdermott.github.io/Research/NLDB_25/BrowserFingerprintingOntology#> .
+@prefix bf: <https://cdmcdermott.github.io/Research/NLDB_25/BrowserFingerprintingOntology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -7,21 +7,21 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-<http://www.example.org/BrowserFingerprinting> a owl:Ontology ;
+<https://cdmcdermott.github.io/Research/NLDB_25/BrowserFingerprintingOntology> a owl:Ontology ;
     rdfs:label "Browser Fingerprinting Ontology"@en ;
     rdfs:comment "An ontology describing entities and relationships related to browser fingerprinting, including scripts, websites, and fingerprintable attributes."@en ;
     dcterms:title "Browser Fingerprinting Ontology" ;
     dcterms:creator [ 
         a foaf:Person ;
-        foaf:name Dr Christopher D. McDermott ;
+        foaf:name "Dr Christopher D. McDermott" ;
         foaf:mbox <mailto:c.d.mcdermott@rgu.ac.uk>
     ] ;
-    dcterms:publisher <http://www.example.org/> ;
+    dcterms:publisher <https://cdmcdermott.github.io/Research/> ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:created "2024-05-07"^^xsd:date ;
     owl:versionInfo "1.0" ;
     vann:preferredNamespacePrefix "bf" ;
-    vann:preferredNamespaceUri "http://www.example.org/BrowserFingerprinting#" ;
+    vann:preferredNamespaceUri "https://cdmcdermott.github.io/Research/NLDB_25/BrowserFingerprintingOntology#" ;
     dcterms:description "This ontology provides a structured vocabulary to describe and analyze browser fingerprinting techniques and their components."@en .
 
 ### Classes
