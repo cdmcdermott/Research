@@ -26,31 +26,135 @@
     dcterms:description "This ontology provides a structured vocabulary to describe and analyze browser fingerprinting techniques and their components."@en .
 
 ### Classes
-bf:Website rdf:type owl:Class .
-bf:FingerprintingScript rdf:type owl:Class .
-bf:Attribute rdf:type owl:Class .
-bf:Feature rdf:type owl:Class .
-bf:TrackingMechanism rdf:type owl:Class .
-bf:FingerprintingCategory rdf:type owl:Class .
-bf:BalancedAttribute rdfs:subClassOf bf:Attribute .
-bf:ImbalancedAttribute rdfs:subClassOf bf:Attribute .
-bf:SensitiveFeature rdfs:subClassOf bf:Feature .
-bf:AggressiveFeature rdfs:subClassOf bf:Feature .
+
+bf:Website a owl:Class ;
+    rdfs:label "Website"@en ;
+    rdfs:comment "A website that hosts or delivers fingerprinting scripts."@en .
+
+bf:FingerprintingScript a owl:Class ;
+    rdfs:label "Fingerprinting Script"@en ;
+    rdfs:comment "A script that performs browser fingerprinting."@en .
+
+bf:Attribute a owl:Class ;
+    rdfs:label "Attribute"@en ;
+    rdfs:comment "A measurable property or characteristic collected during fingerprinting."@en .
+
+bf:Feature a owl:Class ;
+    rdfs:label "Feature"@en ;
+    rdfs:comment "A broader grouping or category of related attributes."@en .
+
+bf:TrackingMechanism a owl:Class ;
+    rdfs:label "Tracking Mechanism"@en ;
+    rdfs:comment "A method used to track or identify users across websites."@en .
+
+bf:FingerprintingCategory a owl:Class ;
+    rdfs:label "Fingerprinting Category"@en ;
+    rdfs:comment "A classification of fingerprinting scripts based on purpose or behavior."@en .
+
+bf:BalancedAttribute rdfs:subClassOf bf:Attribute ;
+    rdfs:label "Balanced Attribute"@en ;
+    rdfs:comment "An attribute considered balanced in terms of privacy sensitivity and utility."@en .
+
+bf:ImbalancedAttribute rdfs:subClassOf bf:Attribute ;
+    rdfs:label "Imbalanced Attribute"@en ;
+    rdfs:comment "An attribute considered disproportionately sensitive or revealing."@en .
+
+bf:SensitiveFeature rdfs:subClassOf bf:Feature ;
+    rdfs:label "Sensitive Feature"@en ;
+    rdfs:comment "A feature composed of sensitive attributes."@en .
+
+bf:AggressiveFeature rdfs:subClassOf bf:Feature ;
+    rdfs:label "Aggressive Feature"@en ;
+    rdfs:comment "A feature used for intensive or invasive fingerprinting."@en .
+
+
 
 ### Object Properties
-bf:usesScript rdf:type owl:ObjectProperty ; rdfs:domain bf:Website ; rdfs:range bf:FingerprintingScript .
-bf:requestsAttribute rdf:type owl:ObjectProperty ; rdfs:domain bf:FingerprintingScript ; rdfs:range bf:Attribute .
-bf:belongsToFeature rdf:type owl:ObjectProperty ; rdfs:domain bf:Attribute ; rdfs:range bf:Feature .
-bf:hasTrackingMechanism rdf:type owl:ObjectProperty ; rdfs:domain bf:FingerprintingScript ; rdfs:range bf:TrackingMechanism .
-bf:classifiedAs rdf:type owl:ObjectProperty ; rdfs:domain bf:FingerprintingScript ; rdfs:range bf:FingerprintingCategory .
-bf:containsAggressiveAttribute rdf:type owl:ObjectProperty ; rdfs:domain bf:Feature ; rdfs:range bf:AggressiveFeature .
-bf:containsSensitiveAttribute rdf:type owl:ObjectProperty ; rdfs:domain bf:Feature ; rdfs:range bf:SensitiveFeature .
+
+bf:usesScript a owl:ObjectProperty ;
+    rdfs:label "uses script"@en ;
+    rdfs:comment "Indicates the script used by a website."@en ;
+    rdfs:domain bf:Website ;
+    rdfs:range bf:FingerprintingScript .
+
+bf:requestsAttribute a owl:ObjectProperty ;
+    rdfs:label "requests attribute"@en ;
+    rdfs:comment "Indicates an attribute requested by a fingerprinting script."@en ;
+    rdfs:domain bf:FingerprintingScript ;
+    rdfs:range bf:Attribute .
+
+bf:belongsToFeature a owl:ObjectProperty ;
+    rdfs:label "belongs to feature"@en ;
+    rdfs:comment "Indicates the feature an attribute belongs to."@en ;
+    rdfs:domain bf:Attribute ;
+    rdfs:range bf:Feature .
+
+bf:hasTrackingMechanism a owl:ObjectProperty ;
+    rdfs:label "has tracking mechanism"@en ;
+    rdfs:comment "Indicates the tracking mechanism used by a script."@en ;
+    rdfs:domain bf:FingerprintingScript ;
+    rdfs:range bf:TrackingMechanism .
+
+bf:classifiedAs a owl:ObjectProperty ;
+    rdfs:label "classified as"@en ;
+    rdfs:comment "Classifies a script under a specific fingerprinting category."@en ;
+    rdfs:domain bf:FingerprintingScript ;
+    rdfs:range bf:FingerprintingCategory .
+
+bf:containsAggressiveAttribute a owl:ObjectProperty ;
+    rdfs:label "contains aggressive attribute"@en ;
+    rdfs:comment "Indicates that a feature includes an aggressive attribute."@en ;
+    rdfs:domain bf:Feature ;
+    rdfs:range bf:AggressiveFeature .
+
+bf:containsSensitiveAttribute a owl:ObjectProperty ;
+    rdfs:label "contains sensitive attribute"@en ;
+    rdfs:comment "Indicates that a feature includes a sensitive attribute."@en ;
+    rdfs:domain bf:Feature ;
+    rdfs:range bf:SensitiveFeature .
+
 
 ### Data Properties
-bf:scriptName rdf:type owl:DatatypeProperty ; rdfs:domain bf:FingerprintingScript ; rdfs:range xsd:string .
-bf:websiteURL rdf:type owl:DatatypeProperty ; rdfs:domain bf:Website ; rdfs:range xsd:string .
-bf:attributeName rdf:type owl:DatatypeProperty ; rdfs:domain bf:Attribute ; rdfs:range xsd:string .
-bf:featureName rdf:type owl:DatatypeProperty ; rdfs:domain bf:Feature ; rdfs:range xsd:string .
-bf:occurrencePercentage rdf:type owl:DatatypeProperty ; rdfs:domain bf:Attribute ; rdfs:range xsd:decimal .
-bf:isSensitive rdf:type owl:DatatypeProperty ; rdfs:domain bf:Feature ; rdfs:range xsd:boolean .
-bf:isAggressive rdf:type owl:DatatypeProperty ; rdfs:domain bf:Feature ; rdfs:range xsd:boolean .
+
+bf:scriptName a owl:DatatypeProperty ;
+    rdfs:label "script name"@en ;
+    rdfs:comment "The name of a fingerprinting script."@en ;
+    rdfs:domain bf:FingerprintingScript ;
+    rdfs:range xsd:string .
+
+bf:websiteURL a owl:DatatypeProperty ;
+    rdfs:label "website URL"@en ;
+    rdfs:comment "The URL of a website deploying fingerprinting scripts."@en ;
+    rdfs:domain bf:Website ;
+    rdfs:range xsd:string .
+
+bf:attributeName a owl:DatatypeProperty ;
+    rdfs:label "attribute name"@en ;
+    rdfs:comment "The name of the collected attribute."@en ;
+    rdfs:domain bf:Attribute ;
+    rdfs:range xsd:string .
+
+bf:featureName a owl:DatatypeProperty ;
+    rdfs:label "feature name"@en ;
+    rdfs:comment "The name of the feature grouping related attributes."@en ;
+    rdfs:domain bf:Feature ;
+    rdfs:range xsd:string .
+
+bf:occurrencePercentage a owl:DatatypeProperty ;
+    rdfs:label "occurrence percentage"@en ;
+    rdfs:comment "The frequency at which an attribute appears across fingerprints."@en ;
+    rdfs:domain bf:Attribute ;
+    rdfs:range xsd:decimal .
+
+bf:isSensitive a owl:DatatypeProperty ;
+    rdfs:label "is sensitive"@en ;
+    rdfs:comment "Boolean flag indicating whether a feature is considered sensitive."@en ;
+    rdfs:domain bf:Feature ;
+    rdfs:range xsd:boolean .
+
+bf:isAggressive a owl:DatatypeProperty ;
+    rdfs:label "is aggressive"@en ;
+    rdfs:comment "Boolean flag indicating whether a feature is considered aggressive."@en ;
+    rdfs:domain bf:Feature ;
+    rdfs:range xsd:boolean .
+
