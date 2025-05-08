@@ -1,0 +1,1 @@
+(featuresCalled[source].length >= 10 || aggressiveFeaturesCalled.length >= 3 || (featuresCalled[source].length >= 5 && aggressiveFeaturesCalled.length >= 1))
