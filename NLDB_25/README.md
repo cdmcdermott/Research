@@ -4,7 +4,7 @@
 **Email**: c.d.mcdermott@rgu.ac.uk  
 **License**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)  
 **Ontology IRI**: [`https://cdmcdermott.github.io/Research/NLDB_25/BrowserFingerprintingOntology`](https://cdmcdermott.github.io/Research/NLDB_25/BrowserFingerprintingOntology)  
-**Namespace**: `https://cdmcdermott.github.io/Research/NLDB_25/BrowserFingerprintingOntology#`
+**Namespace**: `https://cdmcdermott.github.io/Research/NLDB_25/BrowserFingerprintingOntology#`  
 **Version**: 1.0
 
 ---
