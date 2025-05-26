@@ -23,6 +23,7 @@ This repository is shared under the MIT License, but please cite the original pa
 # Contact
 
 For feedback, collaboration, or questions:
+
 **Email**: c.d.mcdermott@rgu.ac.uk  
 **Affiliation**: School of Computing, Robert Gordon University 
 🌐 [cdmcdermott.com](https://cdmcdermott.com)   
