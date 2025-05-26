@@ -22,9 +22,9 @@ This repository is shared under the MIT License, but please cite the original pa
 
 # Contact
 
-Feel free to reach out if you'd like to collaborate or ask questions.
-
-📧 c.d.mcdermott@rgu.ac.uk  
+For feedback, collaboration, or questions:
+**Email**: c.d.mcdermott@rgu.ac.uk  
+**Affiliation**: School of Computing, Robert Gordon University 
 🌐 [cdmcdermott.com](https://cdmcdermott.com)   
 🔗 [LinkedIn](https://https://www.linkedin.com/in/christopher-d-mcdermott-b4549b46/)
 

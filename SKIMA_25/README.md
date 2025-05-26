@@ -14,7 +14,7 @@ Leveraging Knowledge Graphs for Analysing Human Vulnerabilities in Phishing Atta
 - Akintokun Omowumi (Robert Gordon University)
 - Christopher D. McDermott (Robert Gordon University)
 - Lankeshwara Munasinghe (Robert Gordon University)
-- ...
+...
 
 ---
 
